@@ -1,4 +1,6 @@
-package model;
+package model.Linux;
+
+import model.Checkbox;
 
 public class GtkCheckbox implements Checkbox {
     @Override

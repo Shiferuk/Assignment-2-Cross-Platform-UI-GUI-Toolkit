@@ -1,4 +1,6 @@
-package model;
+package model.Windows;
+
+import model.Checkbox;
 
 public class WindowsCheckbox implements Checkbox {
     @Override

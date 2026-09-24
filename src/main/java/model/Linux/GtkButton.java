@@ -1,4 +1,6 @@
-package model;
+package model.Linux;
+
+import model.Button;
 
 public class GtkButton implements Button {
     @Override

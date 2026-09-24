@@ -1,20 +1,20 @@
 import app.*;
-import model.*;
 
 public class Main {
     public static void main(String[] args) {
         String osType = "Mac";
 
-        UserInterfaceApp app;
+        SystemFactory factory;
 
         if (osType.equalsIgnoreCase("Windows")) {
-            app = new WindowsDialogApp();
+            factory = new WindowsFactory();
         } else if (osType.equalsIgnoreCase("Gtk")) {
-            app = new GtkDialogApp();
+            factory = new GtkFactory();
         } else {
-            app = new MacDialogApp();
+            factory = new MacFactory();
         }
 
-        app.displayForm();
+        FormRenderer renderer = new FormRenderer(factory);
+        renderer.displayForm();
     }
 }

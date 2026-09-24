@@ -25,23 +25,28 @@ Assignment2/
 │   ├── Main.java                     <-- Configures and runs the app
 │   │
 │   ├── model/                        <-- PRODUCT INTERFACE & CONCRETES
+│   │   ├── Linux/
+│   │   │   ├── GtkButton.java
+│   │   │   ├── GtkCheckbox.java
+│   │   │   └── GtkTextField.java
+│   │   ├── Mac/
+│   │   │   ├── MacButton.java
+│   │   │   ├── MacCheckbox.java
+│   │   │   └── MacTextField.java
+│   │   ├── Windows/
+│   │   │   ├── WindowsButton.java
+│   │   │   ├── WindowsCheckbox.java
+│   │   │   └── WindowsTextField.java
 │   │   ├── Button.java
 │   │   ├── Checkbox.java
-│   │   ├── WindowsButton.java
-│   │   ├── WindowsCheckbox.java    
-│   │   ├── WindowsTextField.java
-│   │   ├── MacButton.java
-│   │   ├── MacTextField.java
-│   │   ├── GtkButton.java
-│   │   ├── GtkCheckbox.java
-│   │   ├── GtkTextField.java
-│   │   └── MacCheckbox.java  
+│   │   └── TextField.java
 │   │
 │   └── app/                          <-- CREATOR & BUSINESS LOGIC
-│       ├── UserInterfaceApp.java
-│       ├── WindowsDialogApp.java
-│       ├── GtkDialogApp.java
-│       └── MacDialogApp.java
+│       ├── FormRenderer.java
+│       ├── SystemFactory.java
+│       ├── WindowsFactory.java
+│       ├── GtkFactory.java
+│       └── MacFactory.java
 │
 ├── README.md  
 └── report.md  

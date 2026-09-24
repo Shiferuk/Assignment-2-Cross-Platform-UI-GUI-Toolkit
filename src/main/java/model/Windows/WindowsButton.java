@@ -1,4 +1,6 @@
-package model;
+package model.Windows;
+
+import model.Button;
 
 public class WindowsButton implements Button {
     @Override

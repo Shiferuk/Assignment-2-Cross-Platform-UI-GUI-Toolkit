@@ -1,4 +1,6 @@
-package model;
+package model.Mac;
+
+import model.Checkbox;
 
 public class MacCheckbox implements Checkbox {
     @Override

@@ -1,4 +1,6 @@
-package model;
+package model.Mac;
+
+import model.Button;
 
 public class MacButton implements Button {
     @Override
