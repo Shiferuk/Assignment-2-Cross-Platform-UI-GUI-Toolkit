@@ -1,4 +1,4 @@
-# Assignment 1 - Builder Pattern: Computer Configuration System
+# Assignment 2 - Factory method & Abstract Factory
 
 **Course:** Software Design Patterns   
 **Language:** Java JDK 17 Temurin
@@ -22,20 +22,26 @@
 Assignment2/
 │
 ├── src/
-│   ├──Main.java
-│   ├── app/
-│   │    └── UserInterfaceApp
-│   └──components/    
-│       ├──GtkButton.java
-│       ├──GtkCheckbox.java
-│       ├──GtkTextField.java
-│       ├──MacButton.java
-│       ├──MacCheckbox.java
-│       ├──MacTextField.java
-│       ├──WindowsButton.java
-│       ├──WindowsCheckbox.java
-│       └──WindowsTextField.java
-├── test/
+│   ├── Main.java                     <-- Configures and runs the app
+│   │
+│   ├── model/                        <-- PRODUCT INTERFACE & CONCRETES
+│   │   ├── Button.java
+│   │   ├── Checkbox.java
+│   │   ├── WindowsButton.java
+│   │   ├── WindowsCheckbox.java    
+│   │   ├── WindowsTextField.java
+│   │   ├── MacButton.java
+│   │   ├── MacTextField.java
+│   │   ├── GtkButton.java
+│   │   ├── GtkCheckbox.java
+│   │   ├── GtkTextField.java
+│   │   └── MacCheckbox.java  
+│   │
+│   └── app/                          <-- CREATOR & BUSINESS LOGIC
+│       ├── UserInterfaceApp.java
+│       ├── WindowsDialogApp.java
+│       ├── GtkDialogApp.java
+│       └── MacDialogApp.java
 │
 ├── README.md  
 └── report.md  
@@ -50,7 +56,7 @@ Assignment2/
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/Shiferuk/Assignment-2-Cross-Platform-UI-GUI-Toolkit.git
-   cd Assignment2
+   cd Assignment-2-Cross-Platform-UI-GUI-Toolkit
    ```
 
 2. **Compile and Run Main:**

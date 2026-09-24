@@ -1,37 +1,20 @@
-import components.*;
-
-import java.util.Scanner;
+import app.*;
+import model.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        scanner.close();
-        String osType = name;
+        String osType = "Mac";
 
-        WindowsButton winButton = null;
-        WindowsCheckbox winCheckbox = null;
-        WindowsTextField winTextField = null;
-        MacButton macButton = null;
-        MacCheckbox macCheckbox = null;
-        MacTextField maxTextField = null;
-        GtkButton gtkButton = null;
-        GtkCheckbox gtkCheckbox = null;
-        GtkTextField gtkTextField = null;
+        UserInterfaceApp app;
 
         if (osType.equalsIgnoreCase("Windows")) {
-            winButton = new WindowsButton();
-        } else if (osType.equalsIgnoreCase("Mac")) {
-            macCheckbox = new MacCheckbox();
+            app = new WindowsDialogApp();
+        } else if (osType.equalsIgnoreCase("Gtk")) {
+            app = new GtkDialogApp();
+        } else {
+            app = new MacDialogApp();
         }
 
-        // Usage phase: Repeating conditional checks and calling specific method names
-        if (osType.equalsIgnoreCase("Windows") && winButton != null) {
-            winButton.renderWindowsButton();
-            winButton.onClickWindows();
-        } else if (osType.equalsIgnoreCase("Mac") && macCheckbox != null) {
-            macCheckbox.renderMacCheckbox();
-            macCheckbox.toggleMacCheckbox();
-        }
+        app.displayForm();
     }
 }

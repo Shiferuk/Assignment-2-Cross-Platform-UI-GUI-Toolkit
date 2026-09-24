@@ -1,57 +1,28 @@
 package app;
 
-import components.*;
+import model.*;
 
-public class UserInterfaceApp {
-    private String osType;
+public abstract class UserInterfaceApp {
 
-    private WindowsButton winButton;
-    private MacButton macButton;
-    private GtkButton gtkButton;
+    protected abstract Button createButton();
+    protected abstract Checkbox createCheckbox();
 
-    private WindowsCheckbox winCheckbox;
-    private MacCheckbox macCheckbox;
-    private GtkCheckbox gtkCheckbox;
+    public void displayForm() {
+        System.out.println("========================================");
+        System.out.println("App: Initializing OS-native form window...");
 
-    private WindowsTextField winTextField;
-    private MacTextField macTextField;
-    private GtkTextField gtkTextField;
+        Button submitButton = createButton();
+        Checkbox termsCheckbox = createCheckbox();
 
-    public UserInterfaceApp(String osType) {
-        this.osType = osType;
-    }
+        termsCheckbox.render();
+        submitButton.render();
+        System.out.println("App: Form successfully rendered on screen.");
 
-    public void buildForm() {
-        if (osType.equalsIgnoreCase("Windows")) {
-            this.winButton = new WindowsButton();
-            this.winCheckbox = new WindowsCheckbox();
-            this.winTextField = new WindowsTextField();
-        } else if (osType.equalsIgnoreCase("Mac")) {
-            this.macButton = new MacButton();
-            this.macCheckbox = new MacCheckbox();
-            this.macTextField = new MacTextField();
-        } else if (osType.equalsIgnoreCase("Linux")) {
-            this.gtkButton = new GtkButton();
-            this.gtkCheckbox = new GtkCheckbox();
-            this.gtkTextField = new GtkTextField();
-        } else {
-            throw new IllegalArgumentException("Unsupported OS: " + osType);
-        }
-    }
+        System.out.println("\n[User interaction simulated]");
+        termsCheckbox.toggle();
+        submitButton.click();
 
-    public void renderForm() {
-        if (osType.equalsIgnoreCase("Windows")) {
-            winButton.renderWindowsButton();
-            winCheckbox.renderWindowsCheckbox();
-            //winTextField.renderWindowsTextField();
-        } else if (osType.equalsIgnoreCase("Mac")) {
-            macButton.renderMacButton();
-            macCheckbox.renderMacCheckbox();
-            //macTextField.renderMacTextField();
-        } else if (osType.equalsIgnoreCase("Linux")) {
-            gtkButton.renderGtkButton();
-            gtkCheckbox.renderGtkCheckbox();
-            //gtkTextField.renderGtkTextField();
-        }
+        System.out.println("App: Form submission complete. Saved to database.");
+        System.out.println("========================================\n");
     }
 }
